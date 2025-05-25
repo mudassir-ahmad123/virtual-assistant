@@ -1,7 +1,7 @@
 let btn = document.querySelector("#btn")
 let content = document.querySelector("#content")
 let voice = document.querySelector("#voice")
-
+let para =document.querySelector('#para')
 function speak(text) {
     let text_speak = new SpeechSynthesisUtterance(text)
     text_speak.rate = 1
@@ -44,33 +44,43 @@ function takeCommand(message) {
     voice.style.display = "none"
     btn.style.display = "flex"
     if (message.includes("hello") || message.includes("hey")) {
-        speak("hello sir,what can i help you?")
+        speak("hello sir,what can i help you?");
+        setTimeout(() => {
+            para.innerHTML='hello sir,what can i help you?'
+        }, 1000);
     }
     else if (message.includes("what is your name") || message.includes("who are you")) {
-        speak("i am virtual assistant ,created by Mudassir ")
+        speak("i am virtual assistant ,created by Mudassir ");
+        para.innerHTML='i am virtual assistant ,created by Mudassir'
     } else if (message.includes("open youtube")) {
         speak("opening youtube...")
         window.open("https://youtube.com/", "_blank")
+        para.innerHTML="Open YouTube"
     }
     else if (message.includes("open google")) {
         speak("opening google...")
         window.open("https://google.com/", "_blank")
+        para.innerHTML="Open Google"
     }
     else if (message.includes("open facebook")) {
         speak("opening facebook...")
         window.open("https://facebook.com/", "_blank")
+        para.innerHTML="Open Facebook"
     }
     else if (message.includes("open instagram")) {
         speak("opening instagram...")
         window.open("https://instagram.com/", "_blank")
+        para.innerHTML="Open Instagram"
     }
     else if (message.includes("open calculator")) {
         speak("opening calculator..")
         window.open("calculator://")
+        para.innerHTML="Open Calculator"
     }
     else if (message.includes("open whatsapp")) {
         speak("opening whatsapp..")
         window.open("whatsapp://")
+        para.innerHTML="Open WhatsApp"
     }
     else if (message.includes("time")) {
         let time = new Date().toLocaleString(undefined, { hour: "numeric", minute: "numeric" })
@@ -81,8 +91,10 @@ function takeCommand(message) {
         speak(date)
     }
     else {
-        let finalText = "this is what i found on internet regarding" + message.replace("shipra", "") || message.replace("shifra", "")
+        let finalText = "this is what i found on internet regarding " + message.replace("shipra", "") || message.replace("shifra", "")
         speak(finalText)
         window.open(`https://www.google.com/search?q=${message.replace("shipra", "")}`, "_blank")
+        para.innerHTML=finalText
     }
 }
+

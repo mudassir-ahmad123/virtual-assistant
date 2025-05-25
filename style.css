@@ -17,6 +17,7 @@ body {
   flex-direction: column;
   padding: 20px;
   text-align: center;
+  color: wheat;
 }
 
 #logo {
@@ -88,4 +89,16 @@ h1 {
   #voice {
     width: 60px;
   }
+}
+#para{
+  font-size: 20px;
+  font-family: arial, sans-serif;
+  color: rgb(205, 246, 41);
+  font-size: 20px;
+  font-style: italic;
+  box-shadow: 2px 2px 10px rgb(21, 145, 207), 2px 2px 10px rgb(201, 41, 116);
+  padding: 10px;
+  margin-top: 20px; 
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.5);  
 }
